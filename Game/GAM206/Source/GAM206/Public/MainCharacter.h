@@ -6,6 +6,11 @@
 #include "GameFramework/Character.h"
 #include "MainCharacter.generated.h"
 
+class UCameraComponent;
+class USpringArmComponent;
+//class UInteractionComponent;
+class UAnimMontage;
+
 UCLASS()
 class GAM206_API AMainCharacter : public ACharacter
 {
@@ -18,6 +23,20 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+
+	UPROPERTY(VisibleAnywhere)
+		USpringArmComponent* SpringArmComp;
+
+	UPROPERTY(VisibleAnywhere)
+		UCameraComponent* CameraComp;
+
+	//UPROPERTY(VisibleAnywhere)
+	//UInteractionComponent* InteractionComp;
+
+	void MoveForward(float value);
+
+	void MoveRight(float value);
 
 public:	
 	// Called every frame
