@@ -19,7 +19,7 @@ AMainCharacter::AMainCharacter()
 
 	//InteractionComp = CreateAbstractDefaultSubobject<USInteractionComponent>("InteractionComp");
 
-	GetCharacterMovement()->bOrientRotationToMovement = true;
+	//GetCharacterMovement()->bOrientRotationToMovement = true;
 
 	bUseControllerRotationYaw = false;
 }
