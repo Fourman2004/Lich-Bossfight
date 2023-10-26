@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+#include "MainCharacter.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
-#include "MainCharacter.h"
 
 // Sets default values
 AMainCharacter::AMainCharacter()
@@ -22,6 +22,7 @@ AMainCharacter::AMainCharacter()
 	//GetCharacterMovement()->bOrientRotationToMovement = true;
 
 	bUseControllerRotationYaw = false;
+	
 }
 
 // Called when the game starts or when spawned
