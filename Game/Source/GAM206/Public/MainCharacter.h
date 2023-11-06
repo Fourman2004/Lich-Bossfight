@@ -10,6 +10,7 @@ class UCameraComponent;
 class USpringArmComponent;
 //class UInteractionComponent;
 class UAnimMontage;
+class UstaticMeshComponent;
 
 UCLASS()
 class GAM206_API AMainCharacter : public ACharacter
@@ -30,6 +31,9 @@ protected:
 
 	UPROPERTY(VisibleAnywhere)
 		UCameraComponent* CameraComp;
+
+	UPROPERTY(VisibleAnywhere)
+		UStaticMeshComponent* StaffMesh;
 
 	//UPROPERTY(VisibleAnywhere)
 	//UInteractionComponent* InteractionComp;
