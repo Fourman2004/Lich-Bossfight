@@ -3,6 +3,7 @@
 #include "MainCharacter.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 // Sets default values
 AMainCharacter::AMainCharacter()
@@ -22,7 +23,7 @@ AMainCharacter::AMainCharacter()
 	StaffMesh = CreateDefaultSubobject<UStaticMeshComponent>("StaffMeshComponent");
 	StaffMesh->SetupAttachment(CameraComp);
 
-	//GetCharacterMovement()->bOrientRotationToMovement = true;
+	GetCharacterMovement()->bOrientRotationToMovement = true;
 
 	bUseControllerRotationYaw = false;
 	
