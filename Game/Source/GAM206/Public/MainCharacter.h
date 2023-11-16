@@ -29,6 +29,12 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		UStaticMeshComponent* StaffMesh;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		float health;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		float mana;
 
 protected:
 	// Called when the game starts or when spawned
