@@ -8,7 +8,7 @@
 
 class UCameraComponent;
 class USpringArmComponent;
-//class UInteractionComponent;
+class U;
 class UAnimMontage;
 class UstaticMeshComponent;
 
@@ -21,6 +21,10 @@ public:
 	// Sets default values for this character's properties
 	AMainCharacter();
 
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		USpringArmComponent* SpringArmComp;
 
@@ -30,12 +34,11 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		UStaticMeshComponent* StaffMesh;
 
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		float health;
 
-	//UPROPERTY(VisibleAnywhere)
-	//UInteractionComponent* InteractionComp;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		float mana;
 
 	void MoveForward(float value);
 
