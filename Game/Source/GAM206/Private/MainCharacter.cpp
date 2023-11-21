@@ -18,8 +18,6 @@ AMainCharacter::AMainCharacter()
 	CameraComp = CreateDefaultSubobject<UCameraComponent>("CameraComponent");
 	CameraComp->SetupAttachment(SpringArmComp);
 
-	//InteractionComp = CreateAbstractDefaultSubobject<USInteractionComponent>("InteractionComp");
-
 	StaffMesh = CreateDefaultSubobject<UStaticMeshComponent>("StaffMeshComponent");
 	StaffMesh->SetupAttachment(CameraComp);
 
