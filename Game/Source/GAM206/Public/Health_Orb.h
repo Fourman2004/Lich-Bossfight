@@ -6,6 +6,9 @@
 #include "GameFramework/Actor.h"
 #include "Health_Orb.generated.h"
 
+
+
+
 UCLASS()
 class GAM206_API AHealth_Orb : public AActor
 {
@@ -18,6 +21,7 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
 
 public:	
 	// Called every frame
