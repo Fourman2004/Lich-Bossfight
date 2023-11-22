@@ -46,6 +46,18 @@ void AMainCharacter::MoveRight(float value)
 	AddMovementInput(RightVector, value);
 }
 
+void AMainCharacter::Fire_Projectile()
+{
+	if (HitScan)
+	{
+
+	}
+	else
+	{
+	
+	}
+}
+
 
 // Called every frame
 void AMainCharacter::Tick(float DeltaTime)

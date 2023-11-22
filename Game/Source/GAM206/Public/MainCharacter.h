@@ -40,9 +40,14 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		float mana;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		bool HitScan;
+
 	void MoveForward(float value);
 
 	void MoveRight(float value);
+
+	void Fire_Projectile();
 
 public:	
 	// Called every frame
