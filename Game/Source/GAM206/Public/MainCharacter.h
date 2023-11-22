@@ -21,6 +21,9 @@ public:
 	// Sets default values for this character's properties
 	AMainCharacter();
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		float mana;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -38,9 +41,6 @@ protected:
 		float health;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		float mana;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		bool HitScan;
 
 	void MoveForward(float value);
@@ -48,6 +48,8 @@ protected:
 	void MoveRight(float value);
 
 	void Fire_Projectile();
+
+	void regen_Mana();
 
 public:	
 	// Called every frame

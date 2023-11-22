@@ -59,6 +59,14 @@ void AMainCharacter::Fire_Projectile()
 }
 
 
+/*void regen_Mana()
+{
+	if (&AMainCharacter::mana)
+	{
+	 &AMainCharacter::mana;
+	}
+}*/
+
 // Called every frame
 void AMainCharacter::Tick(float DeltaTime)
 {
@@ -78,4 +86,6 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	PlayerInputComponent->BindAxis("Lookup", this, &APawn::AddControllerPitchInput);
 
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AMainCharacter::Jump);
+	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AMainCharacter::Fire_Projectile);
+	//PlayerInputComponent->BindAction("Regen Mana", IE_Repeat, this, & AMainCharacter::regen_Mana);
 }
