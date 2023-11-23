@@ -43,6 +43,9 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		bool HitScan;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		bool Jumping;
+
 	void MoveForward(float value);
 
 	void MoveRight(float value);
