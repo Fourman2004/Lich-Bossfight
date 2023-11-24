@@ -4,11 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Engine/World.h"
 #include "MainCharacter.generated.h"
 
 class UCameraComponent;
 class USpringArmComponent;
-class U;
+class UWorld;
 class UAnimMontage;
 class UstaticMeshComponent;
 
@@ -53,6 +54,8 @@ protected:
 	void Fire_Projectile();
 
 	void regen_Mana();
+
+	FActorSpawnParameters Spawnparameters;
 
 public:	
 	// Called every frame

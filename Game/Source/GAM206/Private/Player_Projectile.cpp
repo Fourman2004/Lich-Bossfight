@@ -2,6 +2,8 @@
 
 
 #include "Player_Projectile.h"
+#include "Engine/World.h"
+
 
 // Sets default values
 APlayer_Projectile::APlayer_Projectile()
@@ -15,6 +17,8 @@ APlayer_Projectile::APlayer_Projectile()
 
 	ParticleSystem = CreateDefaultSubobject<UParticleSystem>("Particles");
 }
+
+
 
 // Called when the game starts or when spawned
 void APlayer_Projectile::BeginPlay()

@@ -42,6 +42,3 @@ public:
 
 };
 
-/*
-Source: https://docs.unrealengine.com/5.3/en-US/implementing-projectiles-in-unreal-engine/
-*/
