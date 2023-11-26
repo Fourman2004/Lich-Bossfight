@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Engine/World.h"
+#include "Player_Projectile.h"
 #include "MainCharacter.generated.h"
 
 class UCameraComponent;
@@ -12,6 +13,7 @@ class USpringArmComponent;
 class UWorld;
 class UAnimMontage;
 class UstaticMeshComponent;
+class APlayer_Projectile;
 
 UCLASS()
 class GAM206_API AMainCharacter : public ACharacter
@@ -51,11 +53,13 @@ protected:
 
 	void MoveRight(float value);
 
-	void Fire_Projectile();
-
 	void regen_Mana();
 
-	FActorSpawnParameters Spawnparameters;
+	void Fire_Projectile();
+
+	FActorSpawnParameters* Spawnparameters;
+
+	APlayer_Projectile* Projectile;
 
 public:	
 	// Called every frame

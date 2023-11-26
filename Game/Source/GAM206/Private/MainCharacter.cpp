@@ -4,7 +4,6 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
-#include "Player_Projectile.h"
 
 // Sets default values
 AMainCharacter::AMainCharacter()
@@ -55,9 +54,8 @@ void AMainCharacter::Fire_Projectile()
 	}
 	else
 	{
-		Spawnparameters->Owner = this;
-		Spawnparameters->Instigator = GetInstigator();
-		UWorld::SpawnActor<APlayer_Projectile>(APlayer_Projectile::StaticClass(), AMainCharacter::ActorToWorld(), Spawnparameters);
+		//Spawnparameters->Owner = this;
+		//UWorld::SpawnActor(APlayer_Projectile::StaticClass(), AMainCharacter::GetActorTransform(), Spawnparameters);
 	}
 }
 
