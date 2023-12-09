@@ -47,19 +47,11 @@ protected:
 		bool HitScan;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		bool Jumping;
+		bool rotateWithMovement;
 
 	void MoveForward(float value);
 
 	void MoveRight(float value);
-
-	void regen_Mana();
-
-	void Fire_Projectile();
-
-	FActorSpawnParameters* Spawnparameters;
-
-	APlayer_Projectile* Projectile;
 
 public:	
 	// Called every frame

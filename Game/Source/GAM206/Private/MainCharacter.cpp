@@ -21,7 +21,7 @@ AMainCharacter::AMainCharacter()
 	StaffMesh = CreateDefaultSubobject<UStaticMeshComponent>("StaffMeshComponent");
 	StaffMesh->SetupAttachment(CameraComp);
 
-	GetCharacterMovement()->bOrientRotationToMovement = true;
+	GetCharacterMovement()->bOrientRotationToMovement = rotateWithMovement;
 
 	bUseControllerRotationYaw = false;
 
@@ -46,27 +46,6 @@ void AMainCharacter::MoveRight(float value)
 	AddMovementInput(RightVector, value);
 }
 
-void AMainCharacter::Fire_Projectile()
-{
-	if (HitScan)
-	{
-
-	}
-	else
-	{
-		//Spawnparameters->Owner = this;
-		//UWorld::SpawnActor(APlayer_Projectile::StaticClass(), AMainCharacter::GetActorTransform(), Spawnparameters);
-	}
-}
-
-
-/*void regen_Mana()
-{
-	if (&AMainCharacter::mana)
-	{
-	 &AMainCharacter::mana;
-	}
-}*/
 
 // Called every frame
 void AMainCharacter::Tick(float DeltaTime)
@@ -87,6 +66,4 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	PlayerInputComponent->BindAxis("Lookup", this, &APawn::AddControllerPitchInput);
 
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AMainCharacter::Jump);
-	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AMainCharacter::Fire_Projectile);
-	//PlayerInputComponent->BindAction("Regen Mana", IE_Repeat, this, & AMainCharacter::regen_Mana);
 }
