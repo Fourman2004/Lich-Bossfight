@@ -21,7 +21,7 @@ AMainCharacter::AMainCharacter()
 	StaffMesh = CreateDefaultSubobject<UStaticMeshComponent>("StaffMeshComponent");
 	StaffMesh->SetupAttachment(CameraComp);
 
-	GetCharacterMovement()->bOrientRotationToMovement = rotateWithMovement;
+	GetCharacterMovement()->bOrientRotationToMovement = true;
 
 	bUseControllerRotationYaw = false;
 
