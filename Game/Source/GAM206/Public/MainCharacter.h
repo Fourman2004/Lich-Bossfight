@@ -49,9 +49,14 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		bool rotateWithMovement;
 
+	UPROPERTY(EditAnywhere)
+		TSubclassOf<APlayer_Projectile> projectile;
+
 	void MoveForward(float value);
 
 	void MoveRight(float value);
+
+	void Fire();
 
 public:	
 	// Called every frame

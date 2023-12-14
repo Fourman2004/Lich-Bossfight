@@ -4,6 +4,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Engine/World.h"
 
 // Sets default values
 AMainCharacter::AMainCharacter()
@@ -53,6 +54,19 @@ void AMainCharacter::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
+
+/*void AMainCharacter::Fire()
+{
+	if (HitScan)
+	{
+
+	}
+	else
+	{
+		
+		world->SpawnActor<APlayer_Projectile>(projectile, GetTransform());
+	}
+}*/
 
 // Called to bind functionality to input
 void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
