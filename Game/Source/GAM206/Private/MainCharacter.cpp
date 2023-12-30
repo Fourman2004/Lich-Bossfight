@@ -56,7 +56,7 @@ void AMainCharacter::Tick(float DeltaTime)
 
 }
 
-/*void AMainCharacter::Fire()
+void AMainCharacter::Fire()
 {
 	if (HitScan)
 	{	
