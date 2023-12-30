@@ -5,6 +5,7 @@
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Engine/World.h"
+#include "Detour/DetourNavMeshQuery.h"
 
 // Sets default values
 AMainCharacter::AMainCharacter()
@@ -58,13 +59,14 @@ void AMainCharacter::Tick(float DeltaTime)
 /*void AMainCharacter::Fire()
 {
 	if (HitScan)
-	{
-
+	{	
+		dtNavMeshQuery::findRandomPoint();
+	  	world->spawnactor<AActor>();
 	}
 	else
 	{
 		
-		world->SpawnActor<APlayer_Projectile>(projectile, GetTransform());
+		world->SpawnActor<APlayer_Projectile>();
 	}
 }*/
 
