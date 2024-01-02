@@ -56,7 +56,7 @@ void AMainCharacter::Tick(float DeltaTime)
 
 }
 
-void AMainCharacter::Fire()
+/*void AMainCharacter::Fire()
 {
 	if (HitScan)
 	{	
@@ -68,7 +68,7 @@ void AMainCharacter::Fire()
 		
 		world->SpawnActor<APlayer_Projectile>();
 	}
-}
+}*/
 
 // Called to bind functionality to input
 void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
