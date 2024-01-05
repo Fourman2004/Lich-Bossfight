@@ -50,7 +50,7 @@ protected:
 		bool rotateWithMovement;
 
 	UPROPERTY(EditAnywhere)
-		TSubclassOf<APlayer_Projectile> projectileclass;
+		TSubclassOf<class APlayer_Projectile> projectileclass;
 
 	void MoveForward(float value);
 
@@ -60,6 +60,7 @@ protected:
 	
 	void Sprint();
 
+	FVector staffTip;
 
 public:	
 	// Called every frame

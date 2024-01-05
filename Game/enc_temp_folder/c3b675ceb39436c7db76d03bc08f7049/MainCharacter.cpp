@@ -62,7 +62,7 @@ void AMainCharacter::Tick(float DeltaTime)
 }
 
 //Majority of this code is taken from https://docs.unrealengine.com/4.26/en-US/ProgrammingAndScripting/ProgrammingWithCPP/CPPTutorials/FirstPersonShooter/3/)
-/*void AMainCharacter::Fire()
+void AMainCharacter::Fire()
 {
 	if (mana != 0)
 	{
@@ -102,7 +102,7 @@ void AMainCharacter::Tick(float DeltaTime)
 	{
 		UE_LOG(LogTemp, Error, TEXT("Shot Failed"));
 	}
-}*/
+}
 
 // Called to bind functionality to input
 void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -116,5 +116,5 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	PlayerInputComponent->BindAxis("Lookup", this, &APawn::AddControllerPitchInput);
 
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AMainCharacter::Jump);
-	//PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AMainCharacter::Fire);
+	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AMainCharacter::Fire);
 }
