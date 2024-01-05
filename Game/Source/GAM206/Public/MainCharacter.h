@@ -50,13 +50,16 @@ protected:
 		bool rotateWithMovement;
 
 	UPROPERTY(EditAnywhere)
-		TSubclassOf<APlayer_Projectile> projectile;
+		TSubclassOf<APlayer_Projectile> projectileclass;
 
 	void MoveForward(float value);
 
 	void MoveRight(float value);
 
 	void Fire();
+	
+	void Sprint();
+
 
 public:	
 	// Called every frame

@@ -33,7 +33,7 @@ AMainCharacter::AMainCharacter()
 void AMainCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	mana = 1;
 }
 
 void AMainCharacter::MoveForward(float value)
@@ -48,6 +48,11 @@ void AMainCharacter::MoveRight(float value)
 	AddMovementInput(RightVector, value);
 }
 
+void AMainCharacter::Sprint()
+{
+
+}
+
 
 // Called every frame
 void AMainCharacter::Tick(float DeltaTime)
@@ -56,19 +61,45 @@ void AMainCharacter::Tick(float DeltaTime)
 
 }
 
-/*void AMainCharacter::Fire()
+//Majority of this code is taken from https://docs.unrealengine.com/4.26/en-US/ProgrammingAndScripting/ProgrammingWithCPP/CPPTutorials/FirstPersonShooter/3/)
+void AMainCharacter::Fire()
 {
-	if (HitScan)
-	{	
-		dtNavMeshQuery::findRandomPoint();
-	  	world->spawnactor<AActor>();
+	if (!HitScan && mana != 0)
+	{
+		if (projectileclass)
+		{
+			FVector eyeLocation;
+			FRotator eyeRotation;
+			GetActorEyesViewPoint(eyeLocation, eyeRotation);
+
+			UWorld* world;
+			world->GetWorld();
+			if (world)
+			{
+				//staffMesh->SetStaticMesh();
+				APlayer_Projectile* projectile;
+				FActorSpawnParameters Projectparams;
+				FTransform shootT = AMainCharacter::GetTransform();
+				Projectparams.Owner = this;
+				Projectparams.Instigator = GetInstigator();
+				projectile = world->SpawnActor<APlayer_Projectile>(projectileclass, shootT, Projectparams);
+				if (projectile)
+				{
+
+				}
+			}
+			else
+			{
+				UE_LOG(LogTemp, Error, TEXT("cannot get world"));
+			}
+			mana = -0.1f;
+		}
 	}
 	else
 	{
-		
-		world->SpawnActor<APlayer_Projectile>();
+		UE_LOG(LogTemp, Error, TEXT("Shot Failed"));
 	}
-}*/
+}
 
 // Called to bind functionality to input
 void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -82,4 +113,5 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	PlayerInputComponent->BindAxis("Lookup", this, &APawn::AddControllerPitchInput);
 
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AMainCharacter::Jump);
+	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AMainCharacter::Fire);
 }
