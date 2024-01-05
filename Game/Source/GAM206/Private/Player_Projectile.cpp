@@ -35,7 +35,7 @@ void APlayer_Projectile::Tick(float DeltaTime)
 
 }
 
-void APlayer_Projectile::LaunchInDirection(FVector& launch_Direction)
+void APlayer_Projectile::LaunchInDirection(FVector& launch_Direction)//funct to allow projectile to fly in the direction the player is looking
 {
-	ProjectileMovement->Velocity = launch_Direction * ProjectileMovement->InitialSpeed;
+	ProjectileMovement->Velocity = launch_Direction * ProjectileMovement->InitialSpeed;//gets the Fvector and multiplies it by the speed of the projectile
 }

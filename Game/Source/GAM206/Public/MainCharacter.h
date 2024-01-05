@@ -60,6 +60,8 @@ protected:
 	
 	void Sprint();
 
+	void walk();
+
 	FVector staffTip;
 
 public:	
